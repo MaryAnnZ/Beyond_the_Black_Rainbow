@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A7F7B373-8E94-4498-A838-529E63E25D93}</ProjectGuid>
+    <RootNamespace>BeyondTheBlackRainbow</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <NuGetPackageImportStamp>73712629</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(SolutionDir)\build\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(SolutionDir)\build\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\libs\include;%(AdditionalIncludeDirectories);$(SolutionDir)\libs\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;Rpcrt4.lib;assimp.lib;FreeImage.lib;PhysX3DEBUG_x86.lib;PhysX3CommonDEBUG_x86.lib;PhysX3CookingDEBUG_x86.lib;PhysX3Extensions.lib;PhysX3CharacterKinematicDEBUG_x86.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\libs\libs;%(AdditionalLibraryDirectories);$(SolutionDir)\libs\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;%(AdditionalIncludeDirectories);$(SolutionDir)\libs\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;Rpcrt4.lib;assimp.lib;FreeImage.lib;PhysX3_x86.lib;PhysX3Common_x86.lib;PhysX3Cooking_x86.lib;PhysX3Extensions.lib;PhysX3CharacterKinematic_x86.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\libs\libs;%(AdditionalLibraryDirectories);$(ProjectDir)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>/VERBOSE %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Behavior\OpenDoor2Behavior.cpp" />
+    <ClCompile Include="Behavior\Behavior.cpp" />
+    <ClCompile Include="Behavior\OpenDoorBehavior.cpp" />
+    <ClCompile Include="GameStateManager.cpp" />
+    <ClCompile Include="Framebuffer.cpp" />
+    <ClCompile Include="Behavior\RotateBehavior.cpp" />
+    <ClCompile Include="Shader\DepthDirShaderProgram.cpp" />
+    <ClCompile Include="Shader\DepthShaderProgram.cpp" />
+    <ClCompile Include="SceneGraph\LightNode\DirectionalLightNode.cpp" />
+    <ClCompile Include="Shader\DepthOfFieldShaderProgram.cpp" />
+    <ClCompile Include="Util\DoFHelper.cpp" />
+    <ClCompile Include="Shader\BlurShaderProgram.cpp" />
+    <ClCompile Include="Shader\HighPassShaderProgram.cpp" />
+    <ClCompile Include="Shader\BloomShaderProgram.cpp" />
+    <ClCompile Include="Event\EventFactory.cpp" />
+    <ClCompile Include="Event\Event.cpp" />
+    <ClCompile Include="Event\EventManager.cpp" />
+    <ClCompile Include="Importers\ShaderImporter.cpp" />
+    <ClCompile Include="Physics\PhysicsHandler.cpp" />
+    <ClCompile Include="SceneGraph\LightNode\PointLightNode.cpp" />
+    <ClCompile Include="SceneGraph\PlayerNode.cpp" />
+    <ClCompile Include="SceneGraph\LightNode\LightNode.cpp" />
+    <ClCompile Include="Shader\DirShadowMappingShaderProgram.cpp" />
+    <ClCompile Include="Shader\LightingShaderProgram.cpp" />
+    <ClCompile Include="SceneGraph\CameraNode.cpp" />
+    <ClCompile Include="GLDebug.cpp" />
+    <ClCompile Include="Importers\MeshLoadInfo.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Importers\MeshImporter.cpp" />
+    <ClCompile Include="SceneGraph\MeshNode.cpp" />
+    <ClCompile Include="Render\Renderer.cpp" />
+    <ClCompile Include="SceneGraph\SceneNode.cpp" />
+    <ClCompile Include="Shader\RenderSurfaceShaderProgram.cpp" />
+    <ClCompile Include="Shader\ShaderProgram.cpp" />
+    <ClCompile Include="Shader\SimpleLightingShaderProgram.cpp" />
+    <ClCompile Include="Shader\TextShaderProgram.cpp" />
+    <ClCompile Include="Shader\TextureShaderProgram.cpp" />
+    <ClCompile Include="SceneGraph\LightNode\SpotLightNode.cpp" />
+    <ClCompile Include="Texture\Texture.cpp" />
+    <ClCompile Include="Shader\ShadowMappingShaderProgram.cpp" />
+    <ClCompile Include="SceneGraph\TransformNode.cpp" />
+    <ClCompile Include="Text\Text.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Behavior\OpenDoor2Behavior.h" />
+    <ClInclude Include="Behavior\Behavior.h" />
+    <ClInclude Include="Behavior\OpenDoorBehavior.h" />
+    <ClInclude Include="GameStateManager.h" />
+    <ClInclude Include="Framebuffer.h" />
+    <ClInclude Include="Behavior\RotateBehavior.h" />
+    <ClInclude Include="Shader\DepthDirShaderProgram.h" />
+    <ClInclude Include="Shader\DepthShaderProgram.h" />
+    <ClInclude Include="SceneGraph\LightNode\DirectionalLightNode.h" />
+    <ClInclude Include="Shader\DepthOfFieldShaderProgram.h" />
+    <ClInclude Include="Util\DoFHelper.h" />
+    <ClInclude Include="Shader\BlurShaderProgram.h" />
+    <ClInclude Include="Shader\HighPassShaderProgram.h" />
+    <ClInclude Include="Shader\BloomShaderProgram.h" />
+    <ClInclude Include="Event\EventFactory.h" />
+    <ClInclude Include="Event\Event.h" />
+    <ClInclude Include="Event\EventManager.h" />
+    <ClInclude Include="Event\EventEnums.h" />
+    <ClInclude Include="Importers\ShaderImporter.h" />
+    <ClInclude Include="Physics\PhysicsHandler.h" />
+    <ClInclude Include="SceneGraph\LightNode\PointLightNode.h" />
+    <ClInclude Include="SceneGraph\LightNode\LightsEnum.h" />
+    <ClInclude Include="SceneGraph\PlayerNode.h" />
+    <ClInclude Include="SceneGraph\LightNode\LightNode.h" />
+    <ClInclude Include="Shader\DirShadowMappingShaderProgram.h" />
+    <ClInclude Include="SceneGraph\LightNode.h" />
+    <ClInclude Include="Shader\Fragment\HighPassFragmentShader.glsl" />
+    <ClInclude Include="Shader\LightingShaderProgram.h" />
+    <ClInclude Include="SceneGraph\CameraNode.h" />
+    <ClInclude Include="GLDebug.h" />
+    <ClInclude Include="Importers\MeshLoadInfo.h" />
+    <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="Importers\MeshImporter.h" />
+    <ClInclude Include="SceneGraph\MeshNode.h" />
+    <ClInclude Include="Render\Renderer.h" />
+    <ClInclude Include="SceneGraph\SceneGraphEnum.h" />
+    <ClInclude Include="SceneGraph\SceneNode.h" />
+    <ClInclude Include="SceneGraph\TransformNode.h" />
+    <ClInclude Include="Shader\RenderSurfaceShaderProgram.h" />
+    <ClInclude Include="Shader\ShaderProgram.h" />
+    <ClInclude Include="Shader\SimpleLightingShaderProgram.h" />
+    <ClInclude Include="Shader\TextShaderProgram.h" />
+    <ClInclude Include="Shader\TextureShaderProgram.h" />
+    <ClInclude Include="SceneGraph\LightNode\SpotLightNode.h" />
+    <ClInclude Include="Texture\MipmapStateEnum.h" />
+    <ClInclude Include="Texture\SamplerStateEnum.h" />
+    <ClInclude Include="Shader\ShadowMappingShaderProgram.h" />
+    <ClInclude Include="Shader\Vertex\BloomVertexShader.glsl" />
+    <ClInclude Include="Shader\Vertex\HighPassVertexShader.glsl" />
+    <ClInclude Include="Text\Text.h" />
+    <ClInclude Include="Util\FileChecker.h" />
+    <ClInclude Include="Util\FButtonHandler.h" />
+    <ClInclude Include="Util\UuidHelper.h" />
+    <ClInclude Include="Texture\Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Shader\Fragment\BloomFragmentShader.glsl" />
+    <None Include="Shader\Fragment\BlurFragmentShader.glsl" />
+    <None Include="Shader\Fragment\DepthOfFieldFragmentShader.glsl" />
+    <None Include="Shader\Fragment\SimpleFragmentShader.fragmentshader" />
+    <None Include="Shader\Vertex\BlurVertexShader.glsl" />
+    <None Include="Shader\Vertex\DepthOfFieldVertexShader.glsl" />
+    <None Include="Shader\Vertex\SimpleVertexShader.vertexshader" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
